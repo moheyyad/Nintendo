@@ -1,0 +1,317 @@
+:root{
+    --yell: #e4ff00;
+    --gry: #343434;
+    --trans:#00000079;
+    --light: #eee;
+    --gWidth: 240px;
+}
+body{
+    background-color: #bbb;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+
+}
+nav{
+    display: flex;
+}
+.users{
+    display: flex;
+    height: 70px;
+    margin: 10px;
+
+}
+.users img{
+    border-radius: 50%;
+    margin: 5px;
+    cursor: pointer;
+
+}
+.users .u2{
+    border: 5px solid var(--yell);
+}
+.users .add{
+    color: var(--light);
+    font-size: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--trans);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin: 5px;
+    cursor: pointer;
+
+}
+.users .add span{
+    transform: translateY(-7px);
+}
+
+.clock{
+    display: flex;
+    align-items: center;
+    color: var(--light);
+    margin: 30px 0;
+    letter-spacing: 4px;
+
+    font-weight: 700;
+}
+#xm{
+    letter-spacing: 0px;
+
+}
+.status{
+    display: flex;
+
+}
+.icons{
+    margin: 30px 20px;
+    color: var(--light);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 5px;
+}
+.icons i{
+    font-size: 20px;
+}
+.icons span{
+    margin-left: -5px;
+}
+
+.btns{
+    margin: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+}
+.btns i{
+    border-radius: 50%;
+    background-color: var(--light);
+    font-size: 24px;
+    padding: 18px;
+    cursor: pointer;
+
+}
+
+.barBox{
+    align-items: center;
+    justify-content: center;
+}
+
+.bar ul{
+    padding: 0;
+}
+
+.bar{
+    background: var(--gry);
+    color: var(--light);
+    border-radius: 30px;
+    margin: 20px;
+}
+.bar ul li{
+    float: left;
+    list-style: none;
+    padding: 10px 20px;
+    cursor: pointer;
+
+}
+.bar ul li.active{
+    background: var(--yell);
+    color: var(--gry);
+    border-radius: 30px;
+}
+
+.barBox i{
+    background: var(--trans);
+    padding: 13px;
+    border-radius: 50%;
+    color: var(--light);
+    font-size: 20px;
+    cursor: pointer;
+
+}
+
+#theGames{
+    margin-left: 80px;
+    width: 3000px;
+    transition-duration: .2s;
+
+}
+.game{
+    position: relative;
+    border-radius: 10px;
+    width: fit-content;
+    box-shadow: 0px 4px 16px rgba(0.1,0.1,0.1, .7);
+    display: inline-block;
+    margin-right: 40px;
+    transition: .3s;
+    cursor: pointer;
+
+}
+.game:not(.active):hover{
+    transform: scale(1.03);
+}
+.game img{
+    border-radius: 10px 10px 0 0;
+    width: var(--gWidth);
+}
+.info{
+    position: absolute;
+    bottom: -10px;
+    z-index: 9;
+    background-color: var(--gry);
+    padding: 24px 10px 10px;
+    width: var(--gWidth);
+    border-radius: 0 0 10px 10px;
+
+}
+.info i{
+    position: absolute;
+    top: -20px;
+    right: 15px;
+    background-color: var(--light);
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 50%;
+
+}
+.active .myimg{
+    scale: 1.04;
+    border: 7px solid var(--yell);
+    border-radius: 16px;
+}
+
+ .gamepad{
+    z-index: 6;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    gap: 15px;
+    background-color: var(--yell);
+    cursor: pointer;
+
+}
+ .gamepad img{
+    border-radius: 50%;
+    width: 30px;
+
+}
+ .gamepad i{
+    font-size: 22px;
+}
+
+.update{
+    position: absolute;
+    padding: 20px;
+    width: 100%;
+    animation: disappear .3s forwards;
+    animation-delay: 20s;
+    cursor: pointer;
+
+}
+.update .updateBar{
+    width: 100%;
+    height: 15px;
+    background-color: var(--gry);
+    border-radius: 10px;
+}
+.update .updateBar .theBar{
+    width: 10%;
+    height: 15px;
+    background-color: var(--yell);
+    border-radius: 10px;
+    animation: ubdating 18s forwards;
+
+}
+.update p{
+    background-color: var(--light);
+    color: var(--gry);
+    width: 50%;
+    padding: 3px;
+    margin: 12px auto;
+    border-radius: 20px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.completed {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--yell);
+    padding: 5px 10px;
+    border-radius: 10px;
+    opacity: 0;
+    animation: appear 3s forwards;
+    animation-delay: 20s;
+
+}
+@keyframes ubdating {
+    10%{
+        width: 20%;
+    }
+    30%{
+        width: 40%;
+    }
+    50%{
+        width: 50%;
+    }
+    70%{
+        width:  95%;
+    }
+    100%{
+        width: 100%;
+    }
+}
+@keyframes disappear{
+    to{
+        opacity: 0;
+    }
+}
+@keyframes appear{
+    30%{
+        opacity: 100%;      
+    }
+    80%{
+       opacity: 100%;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+
+.controls{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    width: fit-content;
+    gap: 25px;
+    margin-top: 40px;
+}
+.controls i{
+    background-color: var(--light);
+    font-size: 28px;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.controls img{
+    border-radius: 50%;
+    cursor: pointer;
+
+
+}
+.controls .fa-gear{
+    background-color: var(--yell);
+}
